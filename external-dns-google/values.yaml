@@ -1,0 +1,15 @@
+---
+provider: google
+policy: sync
+sources:
+- service
+- ingress
+
+extraArgs:
+- --google-project=myproject
+
+serviceAccount:
+  create: true
+  name: external-dns
+  annotations:
+    iam.gke.io/gcp-service-account: external-dns@myproject.iam.gserviceaccount.com
